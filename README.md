@@ -1,3 +1,10 @@
-This is the project for comp2113. 
-Hello world. 
-Hi all. 
+# COMP2113 Group Project 
+---
+Groupmates:
+CHOW Yee Tak, Edwin
+POON Ho Ting, Rain 
+
+# Project Description 
+---
+
+## Background

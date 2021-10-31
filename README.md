@@ -112,6 +112,8 @@ For example, the player’s name, number of power dusts, current planet, etc.
 
 Pointers: Passing arrays and values of power dusts. Pointers might be also used for some advanced data structures.
 
+Array: add more elements to the array
+
 ### File input/output (e.g., for loading/saving game status)
 
 For saving game status, config files, etc.

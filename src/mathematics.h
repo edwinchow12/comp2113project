@@ -1,0 +1,2 @@
+void GuessTheNumber();
+void PeacefulWar();

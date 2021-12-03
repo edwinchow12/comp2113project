@@ -6,7 +6,8 @@
 
 using namespace std;
 
-//to initialize the position of the
+//to initialize the position of the bot
+//the input is the data structure (Bot), B
 void Pacman::initpos(Bot &B)
 {
     B.r = rand() % 15;
@@ -26,6 +27,7 @@ void Pacman::initpos(Bot &B)
 }
 
 //to initialize the position of score
+//the input is the data structure (Score), S
 void Pacman::initspos(Score &S)
 {
     S.r = rand() % 15;
@@ -45,6 +47,7 @@ void Pacman::initspos(Score &S)
 }
 
 //to move the position of the bot randomly
+//the input is the data structure (Bot), B
 void Pacman::randmove(Bot &B)
 {
     int c;
@@ -96,6 +99,7 @@ void Pacman::initarray()
 }
 
 //to print the array
+//the input is the array
 void Pacman::print(char a[15][30])
 {
     for (int i = 0; i < 15; i++)
@@ -109,6 +113,7 @@ void Pacman::print(char a[15][30])
 }
 
 //to move the position of the player according to the user's input
+//the input is the letter inputted by the user and the data structure (Player), p
 void Pacman::move(char input, Player &p)
 {
     switch (input)

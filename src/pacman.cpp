@@ -246,9 +246,9 @@ int Pacman::play()
     return 0;
 }
 
-int main(){
+/*int main(){
     Pacman * pacman = new Pacman;
     pacman->play();
     delete pacman;
     return 0;
-}
+}*/

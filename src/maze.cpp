@@ -295,7 +295,6 @@ void Maze::printGamePlain(int x, int y)
         }
         std::cout << std::endl;
     }
-    std::cout << "Press k to exit..." << std::endl;
 }
 
 // Overall function for playing the maze
@@ -328,11 +327,6 @@ void Maze::play()
         case 'd':
             if (gamePlain[current_y][current_x + 1])
                 current_x++;
-            break;
-        case 'k':
-            printf("\033c");
-            std::cout << "Game terminated by player" << std::endl;
-            return;
             break;
         default:
             break;

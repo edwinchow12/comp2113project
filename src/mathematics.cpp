@@ -53,6 +53,7 @@ void PeacefulWar::init(Player &a, Player &b)
     b.attackers = 0;
 }
 
+//Prints the current game plain
 void PeacefulWar::print_status(Player a, Player b)
 {
     printf("\033c");
@@ -203,6 +204,7 @@ void PeacefulWar::manageMovements(Player &a, Player &b, bool isPlayerWin)
     }
 }
 
+//Program to run the whole game
 int PeacefulWar::run()
 {
     bool condition = true; // Game flag, false will terminate the game
@@ -218,7 +220,7 @@ int PeacefulWar::run()
         srand(time(NULL));
         c = rand() % 3;
         p = -1; // Initialization of player's choice
-        cout << "Enter your choice: (0 for scissors, 1 for rock, 2 for paper" << endl;
+        cout << "Enter your choice: (0 for scissors, 1 for rock, 2 for paper)" << endl;
         cin >> p;
         // Detection for invalid value(s)
         while (!(p >= 0 && p <= 2))

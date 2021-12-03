@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//Return true if the user already exists
 bool isExist(string n)
 {
     ifstream userdata;
@@ -50,6 +51,7 @@ void CreateNewUser(Player * newPlayer)
     temp.close();
 }
 
+//Load a user
 bool LoadUser(Player * player){
     char input;
     bool found = false;
@@ -70,6 +72,8 @@ bool LoadUser(Player * player){
         }
     }
     userdata.close();
+
+    //If user is not found
     if (!found){
         cout << "User not found. Create a new user instead? (Y/N)" << endl;
         do {
@@ -84,6 +88,7 @@ bool LoadUser(Player * player){
     return found;
 }
 
+//Save current process to the file
 void SaveProcess(Player *p)
 {
     ofstream temp;     // New Userdata file

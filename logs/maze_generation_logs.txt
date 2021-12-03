@@ -1,0 +1,682 @@
+Cell Initialisation: 0 0 initialised 
+Cell Initialisation: 0 1 initialised 
+Cell Initialisation: 0 2 initialised 
+Cell Initialisation: 0 3 initialised 
+Cell Initialisation: 0 4 initialised 
+Cell Initialisation: 0 5 initialised 
+Cell Initialisation: 0 6 initialised 
+Cell Initialisation: 0 7 initialised 
+Cell Initialisation: 0 8 initialised 
+Cell Initialisation: 0 9 initialised 
+Cell Initialisation: 1 0 initialised 
+Cell Initialisation: 1 1 initialised 
+Cell Initialisation: 1 2 initialised 
+Cell Initialisation: 1 3 initialised 
+Cell Initialisation: 1 4 initialised 
+Cell Initialisation: 1 5 initialised 
+Cell Initialisation: 1 6 initialised 
+Cell Initialisation: 1 7 initialised 
+Cell Initialisation: 1 8 initialised 
+Cell Initialisation: 1 9 initialised 
+Cell Initialisation: 2 0 initialised 
+Cell Initialisation: 2 1 initialised 
+Cell Initialisation: 2 2 initialised 
+Cell Initialisation: 2 3 initialised 
+Cell Initialisation: 2 4 initialised 
+Cell Initialisation: 2 5 initialised 
+Cell Initialisation: 2 6 initialised 
+Cell Initialisation: 2 7 initialised 
+Cell Initialisation: 2 8 initialised 
+Cell Initialisation: 2 9 initialised 
+Cell Initialisation: 3 0 initialised 
+Cell Initialisation: 3 1 initialised 
+Cell Initialisation: 3 2 initialised 
+Cell Initialisation: 3 3 initialised 
+Cell Initialisation: 3 4 initialised 
+Cell Initialisation: 3 5 initialised 
+Cell Initialisation: 3 6 initialised 
+Cell Initialisation: 3 7 initialised 
+Cell Initialisation: 3 8 initialised 
+Cell Initialisation: 3 9 initialised 
+Cell Initialisation: 4 0 initialised 
+Cell Initialisation: 4 1 initialised 
+Cell Initialisation: 4 2 initialised 
+Cell Initialisation: 4 3 initialised 
+Cell Initialisation: 4 4 initialised 
+Cell Initialisation: 4 5 initialised 
+Cell Initialisation: 4 6 initialised 
+Cell Initialisation: 4 7 initialised 
+Cell Initialisation: 4 8 initialised 
+Cell Initialisation: 4 9 initialised 
+Cell Initialisation: 5 0 initialised 
+Cell Initialisation: 5 1 initialised 
+Cell Initialisation: 5 2 initialised 
+Cell Initialisation: 5 3 initialised 
+Cell Initialisation: 5 4 initialised 
+Cell Initialisation: 5 5 initialised 
+Cell Initialisation: 5 6 initialised 
+Cell Initialisation: 5 7 initialised 
+Cell Initialisation: 5 8 initialised 
+Cell Initialisation: 5 9 initialised 
+Cell Initialisation: 6 0 initialised 
+Cell Initialisation: 6 1 initialised 
+Cell Initialisation: 6 2 initialised 
+Cell Initialisation: 6 3 initialised 
+Cell Initialisation: 6 4 initialised 
+Cell Initialisation: 6 5 initialised 
+Cell Initialisation: 6 6 initialised 
+Cell Initialisation: 6 7 initialised 
+Cell Initialisation: 6 8 initialised 
+Cell Initialisation: 6 9 initialised 
+Cell Initialisation: 7 0 initialised 
+Cell Initialisation: 7 1 initialised 
+Cell Initialisation: 7 2 initialised 
+Cell Initialisation: 7 3 initialised 
+Cell Initialisation: 7 4 initialised 
+Cell Initialisation: 7 5 initialised 
+Cell Initialisation: 7 6 initialised 
+Cell Initialisation: 7 7 initialised 
+Cell Initialisation: 7 8 initialised 
+Cell Initialisation: 7 9 initialised 
+Cell Initialisation: 8 0 initialised 
+Cell Initialisation: 8 1 initialised 
+Cell Initialisation: 8 2 initialised 
+Cell Initialisation: 8 3 initialised 
+Cell Initialisation: 8 4 initialised 
+Cell Initialisation: 8 5 initialised 
+Cell Initialisation: 8 6 initialised 
+Cell Initialisation: 8 7 initialised 
+Cell Initialisation: 8 8 initialised 
+Cell Initialisation: 8 9 initialised 
+Cell Initialisation: 9 0 initialised 
+Cell Initialisation: 9 1 initialised 
+Cell Initialisation: 9 2 initialised 
+Cell Initialisation: 9 3 initialised 
+Cell Initialisation: 9 4 initialised 
+Cell Initialisation: 9 5 initialised 
+Cell Initialisation: 9 6 initialised 
+Cell Initialisation: 9 7 initialised 
+Cell Initialisation: 9 8 initialised 
+Cell Initialisation: 9 9 initialised 
+Start generating maze...
+DFS: Processing cell 3 8...
+Random code = 0
+Stack updated: 3 8 pushed
+DFS: Processing cell 3 7...
+Random code = 2
+Stack updated: 3 7 pushed
+DFS: Processing cell 2 7...
+Random code = 0
+Stack updated: 2 7 pushed
+DFS: Processing cell 2 6...
+Random code = 2
+Stack updated: 2 6 pushed
+DFS: Processing cell 1 6...
+Random code = 1
+Stack updated: 1 6 pushed
+DFS: Processing cell 1 7...
+Random code = 2
+Stack updated: 1 7 pushed
+DFS: Processing cell 0 7...
+Random code = 0
+Stack updated: 0 7 pushed
+DFS: Processing cell 0 6...
+Random code = 2
+Random code = 1
+Random code = 3
+Random code = 0
+Stack updated: 0 6 pushed
+DFS: Processing cell 0 5...
+Random code = 3
+Stack updated: 0 5 pushed
+DFS: Processing cell 1 5...
+Random code = 0
+Stack updated: 1 5 pushed
+DFS: Processing cell 1 4...
+Random code = 0
+Stack updated: 1 4 pushed
+DFS: Processing cell 1 3...
+Random code = 2
+Stack updated: 1 3 pushed
+DFS: Processing cell 0 3...
+Random code = 3
+Random code = 1
+Stack updated: 0 3 pushed
+Stack updated: 0 3 popped
+DFS: Processing cell 0 3...
+Random code = 1
+Random code = 2
+Random code = 2
+Random code = 1
+Random code = 2
+Random code = 3
+Random code = 1
+Random code = 2
+Random code = 2
+Random code = 0
+Stack updated: 0 3 pushed
+DFS: Processing cell 0 2...
+Random code = 1
+Random code = 0
+Stack updated: 0 2 pushed
+DFS: Processing cell 0 1...
+Random code = 2
+Random code = 1
+Random code = 2
+Random code = 0
+Stack updated: 0 1 pushed
+DFS: Processing cell 0 0...
+Random code = 3
+Stack updated: 0 0 pushed
+DFS: Processing cell 1 0...
+Random code = 2
+Random code = 0
+Random code = 2
+Random code = 0
+Random code = 0
+Random code = 2
+Random code = 0
+Random code = 0
+Random code = 0
+Random code = 2
+Random code = 0
+Random code = 1
+Stack updated: 1 0 pushed
+DFS: Processing cell 1 1...
+Random code = 3
+Stack updated: 1 1 pushed
+DFS: Processing cell 2 1...
+Random code = 1
+Stack updated: 2 1 pushed
+DFS: Processing cell 2 2...
+Random code = 1
+Stack updated: 2 2 pushed
+DFS: Processing cell 2 3...
+Random code = 1
+Stack updated: 2 3 pushed
+DFS: Processing cell 2 4...
+Random code = 2
+Random code = 0
+Random code = 0
+Random code = 2
+Random code = 1
+Stack updated: 2 4 pushed
+DFS: Processing cell 2 5...
+Random code = 0
+Random code = 1
+Random code = 1
+Random code = 0
+Random code = 1
+Random code = 1
+Random code = 2
+Random code = 3
+Stack updated: 2 5 pushed
+DFS: Processing cell 3 5...
+Random code = 3
+Stack updated: 3 5 pushed
+DFS: Processing cell 4 5...
+Random code = 0
+Stack updated: 4 5 pushed
+DFS: Processing cell 4 4...
+Random code = 1
+Random code = 3
+Stack updated: 4 4 pushed
+DFS: Processing cell 5 4...
+Random code = 2
+Random code = 1
+Stack updated: 5 4 pushed
+DFS: Processing cell 5 5...
+Random code = 1
+Stack updated: 5 5 pushed
+DFS: Processing cell 5 6...
+Random code = 3
+Stack updated: 5 6 pushed
+DFS: Processing cell 6 6...
+Random code = 1
+Stack updated: 6 6 pushed
+DFS: Processing cell 6 7...
+Random code = 0
+Random code = 1
+Stack updated: 6 7 pushed
+DFS: Processing cell 6 8...
+Random code = 1
+Stack updated: 6 8 pushed
+DFS: Processing cell 6 9...
+Random code = 1
+Random code = 0
+Random code = 1
+Random code = 0
+Random code = 2
+Stack updated: 6 9 pushed
+DFS: Processing cell 5 9...
+Random code = 0
+Stack updated: 5 9 pushed
+DFS: Processing cell 5 8...
+Random code = 2
+Stack updated: 5 8 pushed
+DFS: Processing cell 4 8...
+Random code = 3
+Random code = 0
+Stack updated: 4 8 pushed
+DFS: Processing cell 4 7...
+Random code = 0
+Stack updated: 4 7 pushed
+DFS: Processing cell 4 6...
+Random code = 1
+Random code = 1
+Random code = 1
+Random code = 0
+Random code = 0
+Random code = 1
+Random code = 1
+Random code = 1
+Random code = 0
+Random code = 0
+Random code = 1
+Random code = 1
+Random code = 2
+Stack updated: 4 6 pushed
+Stack updated: 4 6 popped
+Stack updated: 4 7 popped
+DFS: Processing cell 4 7...
+Random code = 2
+Random code = 3
+Stack updated: 4 7 pushed
+Stack updated: 4 7 popped
+Stack updated: 4 8 popped
+DFS: Processing cell 4 8...
+Random code = 1
+Stack updated: 4 8 pushed
+DFS: Processing cell 4 9...
+Random code = 3
+Random code = 2
+Stack updated: 4 9 pushed
+DFS: Processing cell 3 9...
+Random code = 0
+Stack updated: 3 9 pushed
+DFS: Processing cell 3 8...
+Random code = 2
+Stack updated: 3 8 pushed
+DFS: Processing cell 2 8...
+Random code = 2
+Stack updated: 2 8 pushed
+DFS: Processing cell 1 8...
+Random code = 1
+Stack updated: 1 8 pushed
+DFS: Processing cell 1 9...
+Random code = 1
+Random code = 3
+Stack updated: 1 9 pushed
+Stack updated: 1 9 popped
+DFS: Processing cell 1 9...
+Random code = 2
+Stack updated: 1 9 pushed
+DFS: Processing cell 0 9...
+Random code = 0
+Stack updated: 0 9 pushed
+Stack updated: 0 9 popped
+Stack updated: 1 9 popped
+Stack updated: 1 8 popped
+Stack updated: 2 8 popped
+Stack updated: 3 8 popped
+Stack updated: 3 9 popped
+Stack updated: 4 9 popped
+Stack updated: 4 8 popped
+Stack updated: 5 8 popped
+Stack updated: 5 9 popped
+Stack updated: 6 9 popped
+DFS: Processing cell 6 9...
+Random code = 3
+Stack updated: 6 9 pushed
+DFS: Processing cell 7 9...
+Random code = 0
+Stack updated: 7 9 pushed
+DFS: Processing cell 7 8...
+Random code = 1
+Random code = 3
+Stack updated: 7 8 pushed
+DFS: Processing cell 8 8...
+Random code = 3
+Stack updated: 8 8 pushed
+DFS: Processing cell 9 8...
+Random code = 3
+Random code = 3
+Random code = 2
+Random code = 0
+Stack updated: 9 8 pushed
+DFS: Processing cell 9 7...
+Random code = 3
+Random code = 1
+Random code = 3
+Random code = 2
+Stack updated: 9 7 pushed
+DFS: Processing cell 8 7...
+Random code = 0
+Stack updated: 8 7 pushed
+DFS: Processing cell 8 6...
+Random code = 3
+Stack updated: 8 6 pushed
+DFS: Processing cell 9 6...
+Random code = 2
+Random code = 0
+Stack updated: 9 6 pushed
+DFS: Processing cell 9 5...
+Random code = 3
+Random code = 2
+Stack updated: 9 5 pushed
+DFS: Processing cell 8 5...
+Random code = 0
+Stack updated: 8 5 pushed
+DFS: Processing cell 8 4...
+Random code = 2
+Stack updated: 8 4 pushed
+DFS: Processing cell 7 4...
+Random code = 1
+Stack updated: 7 4 pushed
+DFS: Processing cell 7 5...
+Random code = 1
+Stack updated: 7 5 pushed
+DFS: Processing cell 7 6...
+Random code = 0
+Random code = 0
+Random code = 2
+Random code = 3
+Random code = 1
+Stack updated: 7 6 pushed
+Stack updated: 7 6 popped
+Stack updated: 7 5 popped
+DFS: Processing cell 7 5...
+Random code = 1
+Random code = 3
+Random code = 0
+Random code = 2
+Stack updated: 7 5 pushed
+DFS: Processing cell 6 5...
+Random code = 3
+Random code = 3
+Random code = 2
+Random code = 3
+Random code = 0
+Stack updated: 6 5 pushed
+DFS: Processing cell 6 4...
+Random code = 2
+Random code = 3
+Random code = 2
+Random code = 1
+Random code = 2
+Random code = 0
+Stack updated: 6 4 pushed
+DFS: Processing cell 6 3...
+Random code = 0
+Stack updated: 6 3 pushed
+DFS: Processing cell 6 2...
+Random code = 3
+Stack updated: 6 2 pushed
+DFS: Processing cell 7 2...
+Random code = 0
+Stack updated: 7 2 pushed
+DFS: Processing cell 7 1...
+Random code = 3
+Stack updated: 7 1 pushed
+DFS: Processing cell 8 1...
+Random code = 1
+Stack updated: 8 1 pushed
+DFS: Processing cell 8 2...
+Random code = 2
+Random code = 1
+Stack updated: 8 2 pushed
+DFS: Processing cell 8 3...
+Random code = 3
+Stack updated: 8 3 pushed
+DFS: Processing cell 9 3...
+Random code = 1
+Stack updated: 9 3 pushed
+Stack updated: 9 3 popped
+DFS: Processing cell 9 3...
+Random code = 3
+Random code = 2
+Random code = 1
+Random code = 0
+Stack updated: 9 3 pushed
+DFS: Processing cell 9 2...
+Random code = 2
+Random code = 1
+Random code = 2
+Random code = 3
+Random code = 2
+Random code = 0
+Stack updated: 9 2 pushed
+DFS: Processing cell 9 1...
+Random code = 1
+Random code = 2
+Random code = 3
+Random code = 1
+Random code = 0
+Stack updated: 9 1 pushed
+DFS: Processing cell 9 0...
+Random code = 3
+Random code = 3
+Random code = 0
+Random code = 3
+Random code = 0
+Random code = 1
+Random code = 3
+Random code = 0
+Random code = 3
+Random code = 2
+Stack updated: 9 0 pushed
+DFS: Processing cell 8 0...
+Random code = 1
+Random code = 1
+Random code = 3
+Random code = 0
+Random code = 3
+Random code = 0
+Random code = 1
+Random code = 2
+Stack updated: 8 0 pushed
+DFS: Processing cell 7 0...
+Random code = 1
+Random code = 0
+Random code = 1
+Random code = 3
+Random code = 1
+Random code = 2
+Stack updated: 7 0 pushed
+DFS: Processing cell 6 0...
+Random code = 1
+Stack updated: 6 0 pushed
+DFS: Processing cell 6 1...
+Random code = 3
+Random code = 1
+Random code = 2
+Stack updated: 6 1 pushed
+DFS: Processing cell 5 1...
+Random code = 0
+Stack updated: 5 1 pushed
+DFS: Processing cell 5 0...
+Random code = 1
+Random code = 3
+Random code = 0
+Random code = 3
+Random code = 0
+Random code = 1
+Random code = 3
+Random code = 1
+Random code = 0
+Random code = 1
+Random code = 0
+Random code = 0
+Random code = 3
+Random code = 1
+Random code = 3
+Random code = 2
+Stack updated: 5 0 pushed
+DFS: Processing cell 4 0...
+Random code = 2
+Stack updated: 4 0 pushed
+DFS: Processing cell 3 0...
+Random code = 3
+Random code = 2
+Stack updated: 3 0 pushed
+Stack updated: 3 0 popped
+DFS: Processing cell 3 0...
+Random code = 2
+Random code = 0
+Random code = 1
+Stack updated: 3 0 pushed
+DFS: Processing cell 3 1...
+Random code = 0
+Random code = 3
+Stack updated: 3 1 pushed
+DFS: Processing cell 4 1...
+Random code = 3
+Random code = 1
+Stack updated: 4 1 pushed
+DFS: Processing cell 4 2...
+Random code = 3
+Stack updated: 4 2 pushed
+DFS: Processing cell 5 2...
+Random code = 0
+Random code = 1
+Stack updated: 5 2 pushed
+DFS: Processing cell 5 3...
+Random code = 2
+Stack updated: 5 3 pushed
+DFS: Processing cell 4 3...
+Random code = 0
+Random code = 0
+Random code = 1
+Random code = 0
+Random code = 0
+Random code = 2
+Stack updated: 4 3 pushed
+DFS: Processing cell 3 3...
+Random code = 2
+Random code = 3
+Random code = 0
+Stack updated: 3 3 pushed
+Stack updated: 3 3 popped
+DFS: Processing cell 3 3...
+Random code = 2
+Random code = 3
+Random code = 3
+Random code = 3
+Random code = 1
+Stack updated: 3 3 pushed
+Stack updated: 3 3 popped
+Stack updated: 4 3 popped
+Stack updated: 5 3 popped
+Stack updated: 5 2 popped
+Stack updated: 4 2 popped
+Stack updated: 4 1 popped
+Stack updated: 3 1 popped
+Stack updated: 3 0 popped
+Stack updated: 4 0 popped
+Stack updated: 5 0 popped
+Stack updated: 5 1 popped
+Stack updated: 6 1 popped
+Stack updated: 6 0 popped
+Stack updated: 7 0 popped
+Stack updated: 8 0 popped
+Stack updated: 9 0 popped
+Stack updated: 9 1 popped
+Stack updated: 9 2 popped
+Stack updated: 9 3 popped
+Stack updated: 8 3 popped
+DFS: Processing cell 8 3...
+Random code = 1
+Random code = 3
+Random code = 1
+Random code = 1
+Random code = 3
+Random code = 0
+Random code = 1
+Random code = 0
+Random code = 0
+Random code = 0
+Random code = 0
+Random code = 1
+Random code = 0
+Random code = 2
+Stack updated: 8 3 pushed
+Stack updated: 8 3 popped
+Stack updated: 8 2 popped
+Stack updated: 8 1 popped
+Stack updated: 7 1 popped
+Stack updated: 7 2 popped
+Stack updated: 6 2 popped
+Stack updated: 6 3 popped
+Stack updated: 6 4 popped
+Stack updated: 6 5 popped
+Stack updated: 7 5 popped
+Stack updated: 7 4 popped
+Stack updated: 8 4 popped
+Stack updated: 8 5 popped
+Stack updated: 9 5 popped
+Stack updated: 9 6 popped
+Stack updated: 8 6 popped
+Stack updated: 8 7 popped
+Stack updated: 9 7 popped
+Stack updated: 9 8 popped
+DFS: Processing cell 9 8...
+Random code = 1
+Stack updated: 9 8 pushed
+DFS: Processing cell 9 9...
+Random code = 3
+Random code = 0
+Random code = 0
+Random code = 3
+Random code = 1
+Random code = 3
+Random code = 0
+Random code = 1
+Random code = 3
+Random code = 2
+Stack updated: 9 9 pushed
+Stack updated: 9 9 popped
+Stack updated: 9 8 popped
+Stack updated: 8 8 popped
+Stack updated: 7 8 popped
+Stack updated: 7 9 popped
+Stack updated: 6 9 popped
+Stack updated: 6 8 popped
+Stack updated: 6 7 popped
+Stack updated: 6 6 popped
+Stack updated: 5 6 popped
+Stack updated: 5 5 popped
+Stack updated: 5 4 popped
+Stack updated: 4 4 popped
+Stack updated: 4 5 popped
+Stack updated: 3 5 popped
+Stack updated: 2 5 popped
+Stack updated: 2 4 popped
+Stack updated: 2 3 popped
+Stack updated: 2 2 popped
+DFS: Processing cell 2 2...
+Random code = 3
+Random code = 2
+Stack updated: 2 2 pushed
+Stack updated: 2 2 popped
+Stack updated: 2 1 popped
+Stack updated: 1 1 popped
+Stack updated: 1 0 popped
+Stack updated: 0 0 popped
+Stack updated: 0 1 popped
+Stack updated: 0 2 popped
+Stack updated: 0 3 popped
+Stack updated: 1 3 popped
+Stack updated: 1 4 popped
+Stack updated: 1 5 popped
+Stack updated: 0 5 popped
+Stack updated: 0 6 popped
+Stack updated: 0 7 popped
+Stack updated: 1 7 popped
+Stack updated: 1 6 popped
+Stack updated: 2 6 popped
+Stack updated: 2 7 popped
+Stack updated: 3 7 popped
+Stack updated: 3 8 popped
+Stack updated: 3 8 popped
+Maze generation completed.
+Initialisation completed.

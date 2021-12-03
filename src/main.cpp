@@ -11,11 +11,13 @@
 
 using namespace std;
 
+//Prints the input file until the separator '!'
+//key refers to which key the user presses to continue 
+//needWait is false if just prints out the texts but no need to wait for input
 void waitForInput(ifstream &fileobj, char key, bool needWait)
 {
     char dummy;
     string temp;
-    string titles [4] = {"Master of the Universe", "Manipulator of the Galaxy", "The Wild Voyager", "Civilization Eliminator"};
 
     while (getline(fileobj, temp) && temp != "!")
     {
@@ -143,6 +145,7 @@ int main()
         waitForInput(FileObj, 's', true);
         try
         {
+            printf("\033c");
             log << "The user started playing Pacman" << endl;
             start = chrono::system_clock::now();
             Pacman *pacman = new Pacman;
@@ -207,7 +210,9 @@ int main()
         FileObj.close();
         player.planet = "Finished";
         SaveProcess(&player);
+        FileObj.open("../dialogues/Ending.txt");
+        waitForInput(FileObj, ' ', false);
+        FileObj.close();
     }
-    // delete player;
     return 0;
 }

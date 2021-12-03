@@ -1,3 +1,9 @@
 The user started playing Guess The Number
 The user finished playing Guess The Number
 The user started playing PeacefulWar
+The user finished playing PeacefulWar
+The user started playing Pacman
+The user finished playing Pacman
+The user started playing Maze
+The user finshed playing Maze
+Game ended.

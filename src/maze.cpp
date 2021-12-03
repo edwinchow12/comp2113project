@@ -5,11 +5,10 @@
 #include <fstream>
 #include <random>
 #include <unistd.h>
+#include <vector> 
+#include <ctime>
 
-
-std::ofstream file; //Game logs
-Maze *maze = new Maze;
-void Cell::cell_init(int _x, int _y)
+void Cell::cell_init(int _x, int _y, Maze * _m)
 {
     x = _x;
     y = _y;
@@ -17,6 +16,7 @@ void Cell::cell_init(int _x, int _y)
     bottom_wall = true;
     left_wall = true;
     right_wall = true;
+    m = _m;
 }
 
 bool Cell::isAllWallsUp()
@@ -30,10 +30,10 @@ bool Cell::isAllWallsUp()
 //Update cells to the correspoding walls variable 
 void Cell::update()
 {
-    maze->walls.rows[y].rowHorizontal[x] = top_wall;
-    maze->walls.rows[y+ 1].rowHorizontal[x]= bottom_wall;
-    maze->walls.rows[y].rowVertical[x] = left_wall;
-    maze->walls.rows[y].rowVertical[x + 1] = right_wall;
+    m->walls.rows[y].rowHorizontal[x] = top_wall;
+    m->walls.rows[y+ 1].rowHorizontal[x]= bottom_wall;
+    m->walls.rows[y].rowVertical[x] = left_wall;
+    m->walls.rows[y].rowVertical[x + 1] = right_wall;
 }
 
 void Maze::walls_init()
@@ -59,15 +59,14 @@ void Maze::maze_init()
     {
         for (int j = 0; j < MAZE_SIZE; j++)
         {
-            cells[i][j].cell_init(i, j);
-            file << "Cell " << i << " " << j << " initialised " << cells[i][j].x << cells[i][j].y << std::endl;
+            cells[i][j].cell_init(i, j, this);
+            this->log << "Cell " << i << " " << j << " initialised " << cells[i][j].x << cells[i][j].y << std::endl;
         }
     }
 }
 
 std::random_device randomNum; //Random Number Device Declaration
 int rdNum;
-//std::stack<Cell> Stack;
 void Maze::DFS(Cell &current)
 {
     //Check if there is neighbour cells with all walls up
@@ -81,16 +80,16 @@ void Maze::DFS(Cell &current)
         if the cell is a boundary cell, that part will return false automatically
         So tenary operators are used
         */
-        (current.x != MAZE_SIZE - 1 ? maze->cells[current.x + 1][current.y].isAllWallsUp() : false) ||
-        (current.y != MAZE_SIZE - 1 ? maze->cells[current.x][current.y + 1].isAllWallsUp() : false) ||
-        (current.x != 0 ? maze->cells[current.x - 1][current.y].isAllWallsUp() : false) ||
-        (current.y != 0 ? maze->cells[current.x][current.y - 1].isAllWallsUp() : false))
+        (current.x != MAZE_SIZE - 1 ? this->cells[current.x + 1][current.y].isAllWallsUp() : false) ||
+        (current.y != MAZE_SIZE - 1 ? this->cells[current.x][current.y + 1].isAllWallsUp() : false) ||
+        (current.x != 0 ? this->cells[current.x - 1][current.y].isAllWallsUp() : false) ||
+        (current.y != 0 ? this->cells[current.x][current.y - 1].isAllWallsUp() : false))
     {
 
-        file << "\n" << current.x << " " << current.y << " " << "pushed" << std::endl;
+        this->log << "\n" << current.x << " " << current.y << " " << "pushed" << std::endl;
         printf("\033c");
         std::cout << current.x << " " << current.y << " Stack length: " << Stack.size() << std::endl;
-        Maze::print(current.x, current.y, true); //Print current plain
+        Maze::print(); //Print current plain
         usleep(TIME);
         Cell * next;
         
@@ -98,12 +97,12 @@ void Maze::DFS(Cell &current)
         //It will continue looping if the number of the corresponding neighbour cell does not have all walls up
         do { 
             rdNum = randomNum() % 4;
-            file << "random code = " << rdNum << std::endl;
+            this->log << "random code = " << rdNum << std::endl;
         } while (
-            (!maze->cells[current.x + 1][current.y].isAllWallsUp() && rdNum == 3) ||
-            (!maze->cells[current.x][current.y + 1].isAllWallsUp() && rdNum == 1) ||
-            (!maze->cells[current.x - 1][current.y].isAllWallsUp() && rdNum == 2) ||
-            (!maze->cells[current.x][current.y - 1].isAllWallsUp() && rdNum == 0) ||
+            (!this->cells[current.x + 1][current.y].isAllWallsUp() && rdNum == 3) ||
+            (!this->cells[current.x][current.y + 1].isAllWallsUp() && rdNum == 1) ||
+            (!this->cells[current.x - 1][current.y].isAllWallsUp() && rdNum == 2) ||
+            (!this->cells[current.x][current.y - 1].isAllWallsUp() && rdNum == 0) ||
 
             //Handle boundary cases of movements 
             ((current.x == 0) && (rdNum == 2)) ||
@@ -142,20 +141,19 @@ void Maze::DFS(Cell &current)
         current.update();
         next->update();
         Stack.push(current);
-        file << "Stack " << Stack.top().x << " " << Stack.top().y << std::endl;
+        this->log << "Stack " << Stack.top().x << " " << Stack.top().y << std::endl;
         DFS(*next);
     }
     else
     {
-        file << "Popping the top item on the stack..." << std::endl;
+        this->log << "Popping the top item on the stack..." << std::endl;
         Cell previous = Stack.top();
         Stack.pop();
         DFS(previous);
     }
 }
 
-//bool walls[MAZE_SIZE + 1][MAZE_SIZE + 1];
-void Maze::print(int x, int y, bool flag)
+void Maze::print()
 {
     for (int j = 0; j < MAZE_SIZE * 2 + 1; j++)
     {
@@ -165,16 +163,15 @@ void Maze::print(int x, int y, bool flag)
             {
                 if (i % 2 == 0)
                 {
-                    
-                    if (maze->walls.rows[int(j/2)].rowVertical[int(i/2)]){
-                        std::cout << "#";
+                    if (this->walls.rows[int(j/2)].rowVertical[int(i/2)]){
+                        std::cout << WALL_CHAR;
                     } else {
-                        std::cout << " ";
+                        std::cout << BLANK_CHAR;
                     }
                 }
                 else
                 {
-                    std::cout << " "; //Cells
+                    std::cout << BLANK_CHAR; //Cells
                 }
             }
             std::cout << std::endl;
@@ -185,14 +182,14 @@ void Maze::print(int x, int y, bool flag)
             {
                 if (i % 2 == 0)
                 {
-                    std::cout << "#"; //Const blocks
+                    std::cout << WALL_CHAR; //Const blocks
                 }
                 else
                 {
-                    if (maze->walls.rows[int(j/2)].rowHorizontal[int(i/2)]){
-                        std::cout << "#";
+                    if (this->walls.rows[int(j/2)].rowHorizontal[int(i/2)]){
+                        std::cout << WALL_CHAR;
                     } else {
-                        std::cout << " ";
+                        std::cout << BLANK_CHAR;
                     }
                 }
             }
@@ -202,9 +199,9 @@ void Maze::print(int x, int y, bool flag)
 }
 void Maze::generate()
 {
-    file << "Start generating maze..." << std::endl;
+    this->log << "Start generating maze..." << std::endl;
     Cell start;
-    start.cell_init(5, 5);
+    start.cell_init(randomNum() % (MAZE_SIZE + 1), randomNum() % (MAZE_SIZE + 1), this);
     Stack.push(start);
     DFS(start);
 }
@@ -213,20 +210,126 @@ void Maze::init()
     maze_init();
     walls_init();
     generate();
+    this->log << "Maze generation completed." << std::endl;
 }
+
+
+
+
+void Maze::writeToPlain(){
+    std::vector<bool> temp;
+    for (int j = 0; j < MAZE_SIZE * 2 + 1; j++)
+    {
+        temp.clear();
+        if (j % 2 != 0)
+        {
+            for (int i = 0; i < MAZE_SIZE * 2 + 1; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    if (this->walls.rows[int(j/2)].rowVertical[int(i/2)]){
+                        temp.push_back(false);
+                    } else {
+                        temp.push_back(true);
+                    }
+                }
+                else
+                {
+                    temp.push_back(true); //Cells
+                }
+            }
+            gamePlain.push_back(temp);
+        }
+        else
+        {
+            for (int i = 0; i < MAZE_SIZE * 2 + 1; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    temp.push_back(false); //Const blocks
+                }
+                else
+                {
+                    if (this->walls.rows[int(j/2)].rowHorizontal[int(i/2)]){
+                        temp.push_back(false);
+                    } else {
+                        temp.push_back(true);
+                    }
+                }
+            }
+            gamePlain.push_back(temp);
+        }
+    }
+}
+
+void Maze::printGamePlain(int x, int y){
+    for (int j = 0; j < gamePlain.size(); j++){
+        for (int i = 0; i < gamePlain[j].size(); i++){
+            if (x == i && y == j) std::cout << PLAYER_CHAR; 
+            else if (i == destination_x && j == destination_y) std::cout << DESTINATION_CHAR; 
+            else std::cout << (gamePlain[i][j] ? BLANK_CHAR : WALL_CHAR);
+        }
+        std::cout << std::endl;
+    }
+    std::cout << "Press k to exit..." << std::endl;
+}
+
+void Maze::play(){
+    char input;
+    int current_x = 1;
+    int current_y = 1;
+    writeToPlain();
+    while (!((current_x == destination_x) && (current_y == destination_y))){
+        printGamePlain(current_x, current_y);
+        system("stty raw");
+        std::cin >> input;
+        system("stty cooked");
+        switch(input){
+            case 'w':
+                if (gamePlain[current_x][current_y - 1]) current_y--;
+                break;
+            case 'a':
+                if (gamePlain[current_x - 1][current_y]) current_x--;
+                break;
+            case 's':
+                if (gamePlain[current_x][current_y + 1]) current_y++;
+                break;
+            case 'd':
+                if (gamePlain[current_x + 1][current_y]) current_x++;
+                break;
+            case 'k':
+                printf("\033c");
+                std::cout << "Game terminated by player" << std::endl;
+                return;
+                break;
+            default:
+                break;
+        }
+        printf("\033c");
+    }
+    std::cout << "You win!" << std::endl;
+}
+
 void Maze::run()
 {
     init();
+    this->log << "Initialisation completed." << std::endl;
     printf("\033c");
-    print(0,0, false);
+    play();
 }
 
+
+//For testing only 
 int main()
 {
-    file.open("../logs/maze_logs.txt");
-    
+    clock_t start, end;
+    Maze *maze = new Maze;
+    maze->log.open("../logs/maze_logs.txt");
+    start = clock();
     maze->run();
     delete maze;
-    file.close();
+    end = clock();
+    maze->log << "Time used: " << (end - start) << std::endl;
+    maze->log.close();
     return 0;
 }

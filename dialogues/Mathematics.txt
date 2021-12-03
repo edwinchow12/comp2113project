@@ -20,7 +20,7 @@ Press 'S' to start the game...
 
 !
 
-Congratulations, you have win all the games, and get enough power dusts. Now, fasten your seatbelt, and head to another planet.
+Congratulations, you have finished all the games, and get enough power dusts. Now, fasten your seatbelt, and head to another planet.
 
 Press c to continue...
 

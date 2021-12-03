@@ -1,20 +1,24 @@
+
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <random>
+#include "mathematics.h"
 
 using namespace std;
 
-//Guess The Number
-void GuessTheNumber()
+// Guess The Number
+
+int GuessTheNumber::run()
 {
-    int numGuess, numSecret, numUp, numDown, numMid;
+    int numGuess, numSecret, numUp, numDown, numMid, count;
+    count = 0;
     numUp = 100;
     numDown = 1;
     numGuess = -1;
-    srand(time(NULL));
-    numSecret = rand() % 100 + 1;
-    cout << numSecret << endl;
+    std::mt19937 randomNum(time(NULL));
+    numSecret = randomNum() % 100 + 1;
     while (numGuess != numSecret)
     {
         cout << "Enter the number " << numDown << " to " << numUp << endl;
@@ -29,22 +33,17 @@ void GuessTheNumber()
             {
                 numDown = numGuess;
             }
+            count++;
         }
     }
     cout << "You win!" << endl;
+    return count;
 }
 
-//Peaceful War
+// Peaceful War
 
-struct Player
-{
-    int hp;
-    int defence;
-    int attackers;
-};
-
-//Initialize the players' statuses (call by reference)
-void init(Player &a, Player &b)
+// Initialize the players' statuses (call by reference)
+void PeacefulWar::init(Player &a, Player &b)
 {
     a.hp = 4;
     a.defence = 1;
@@ -54,7 +53,7 @@ void init(Player &a, Player &b)
     b.attackers = 0;
 }
 
-void print_status(Player a, Player b)
+void PeacefulWar::print_status(Player a, Player b)
 {
     printf("\033c");
     printf("--------------------------------------\n");
@@ -66,37 +65,28 @@ void print_status(Player a, Player b)
     printf("# Enemy's Walls: %i      #\n", b.defence);
     printf("# Enemy's Attackers: %i  #\n", b.attackers);
     printf("#########################\n");
-
-    /*cout << "#######################" << endl;
-    cout << "# Your HP:            #" << endl;
-    cout << "# Your Walls:         #" << endl;
-    cout << "# Your Attackers:     #" << endl;
-    cout << "# Enemy's HP:         #" << endl;
-    cout << "# Enemy's Walls:      #" << endl;
-    cout << "# Enemy's Attackers:  #" << endl;
-    cout << "#######################" << endl;*/
 }
 
-//Manages the movements by the player or the computer
-void manageMovements(Player &a, Player &b, bool isPlayerWin)
+// Manages the movements by the player or the computer
+void PeacefulWar::manageMovements(Player &a, Player &b, bool isPlayerWin)
 {
     /*
     ----------LOGIC----------
-    If the player has less than 4 health, there will be no choices but to 
+    If the player has less than 4 health, there will be no choices but to
     increase health until health reaches 4.
-    If the player has 4 health, the player can choose to add a defence wall, 
+    If the player has 4 health, the player can choose to add a defence wall,
     to add an attacker, or to attack, given that there is an attacker.
     If the player chooses to attack, the computer's attacker will be destroyed,
     followed by the defence walls, and health ultimately.
 
-    The computer will build an attacker when the computer has 3 defences 
-    The computer will continuously attack the player if the computer has 1 
+    The computer will build an attacker when the computer has 3 defences
+    The computer will continuously attack the player if the computer has 1
     attacker.
     */
     int choice;
     if (isPlayerWin)
     {
-        //Player wins
+        // Player wins
         cout << "You win this round!" << endl;
         if (a.hp < 4)
         {
@@ -107,12 +97,13 @@ void manageMovements(Player &a, Player &b, bool isPlayerWin)
         {
             cout << "Choose to add a defence or attack (0 to add a defence wall, 1 to add an attacker, 2 to attack" << endl;
             cin >> choice;
-            //Detection for invalid value(s)
-            while (!(choice >= 0 && choice <= 2)){
+            // Detection for invalid value(s)
+            while (!(choice >= 0 && choice <= 2))
+            {
                 cout << "Please enter a valid value!" << endl;
                 cin >> choice;
             }
-            //If the player chooses to attack without an attacker
+            // If the player chooses to attack without an attacker
             if (a.attackers == 0)
             {
                 while (choice == 2)
@@ -125,19 +116,19 @@ void manageMovements(Player &a, Player &b, bool isPlayerWin)
             {
             case 0:
             {
-                //Player builds defence wall
+                // Player builds defence wall
                 a.defence += 1;
                 break;
             }
             case 1:
             {
-                //Player builds attacker
+                // Player builds attacker
                 a.attackers += 1;
                 break;
             }
             case 2:
             {
-                //Player attacks
+                // Player attacks
                 if (b.attackers > 0)
                 {
                     b.attackers -= 1;
@@ -160,7 +151,7 @@ void manageMovements(Player &a, Player &b, bool isPlayerWin)
     }
     else
     {
-        //Computer wins
+        // Computer wins
         cout << "You lose this round!" << endl;
         if (b.hp < 4)
         {
@@ -212,13 +203,13 @@ void manageMovements(Player &a, Player &b, bool isPlayerWin)
     }
 }
 
-void PeacefulWar()
+int PeacefulWar::run()
 {
-    bool condition = true; //Game flag, false will terminate the game
+    bool condition = true; // Game flag, false will terminate the game
     Player player;
     Player computer;
-    int p; //Player's choice
-    int c; //Computer's randomized choice
+    int p; // Player's choice
+    int c; // Computer's randomized choice
     bool PlayerWins;
     init(player, computer);
     while (condition)
@@ -226,11 +217,12 @@ void PeacefulWar()
         print_status(player, computer);
         srand(time(NULL));
         c = rand() % 3;
-        p = -1; //Initialization of player's choice
+        p = -1; // Initialization of player's choice
         cout << "Enter your choice: (0 for scissors, 1 for rock, 2 for paper" << endl;
         cin >> p;
-        //Detection for invalid value(s)
-        while (!(p >= 0 && p <= 2)){
+        // Detection for invalid value(s)
+        while (!(p >= 0 && p <= 2))
+        {
             cout << "Please enter a valid value!" << endl;
             cin >> p;
         }
@@ -245,21 +237,18 @@ void PeacefulWar()
         manageMovements(player, computer, PlayerWins);
         if ((player.hp == 0) || (computer.hp == 0))
         {
-            //Terminate the game
+            // Terminate the game
             condition = false;
         }
     }
     if (computer.hp == 0)
     {
         cout << "You win!" << endl;
+        return 0;
     }
     else if (player.hp == 0)
     {
         cout << "You lose!" << endl;
+        return 1;
     }
-}
-
-int main()
-{
-    PeacefulWar();
 }

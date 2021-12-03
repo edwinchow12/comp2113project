@@ -5,6 +5,7 @@
 #include <stack>
 #include <vector>
 #include <fstream>
+#include <random>
 
 class Cell;
 class Maze;
@@ -13,12 +14,10 @@ class Maze;
 #define TIME 10000
 #define WALL_CHAR "●"
 #define BLANK_CHAR " "
-#define PLAYER_CHAR "@"
+#define PLAYER_CHAR "P"
 #define DESTINATION_CHAR "D"
 #define destination_x (MAZE_SIZE * 2 - 1)
 #define destination_y (MAZE_SIZE * 2 - 1)
-
-class Maze;
 
 struct rowGroup
 {
@@ -48,6 +47,8 @@ public:
 class Maze
 {
 private:
+    std::mt19937_64 randomNum; //Random Number Device Declaration
+    int rdNum;
     std::stack<Cell> Stack; //Stack object for storing cells in DFS
     Cell cells[MAZE_SIZE][MAZE_SIZE]; //Cell plain
     std::vector<std::vector<bool> > gamePlain;

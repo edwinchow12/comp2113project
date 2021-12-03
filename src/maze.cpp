@@ -5,10 +5,10 @@
 #include <fstream>
 #include <random>
 #include <unistd.h>
-#include <vector> 
+#include <vector>
 #include <ctime>
 
-void Cell::cell_init(int _x, int _y, Maze * _m)
+void Cell::cell_init(int _x, int _y, Maze *_m)
 {
     x = _x;
     y = _y;
@@ -19,23 +19,27 @@ void Cell::cell_init(int _x, int _y, Maze * _m)
     m = _m;
 }
 
+// Return true if all the walls of the cell is up
 bool Cell::isAllWallsUp()
 {
-    if (!top_wall || !bottom_wall || !left_wall || !right_wall){
+    if (!top_wall || !bottom_wall || !left_wall || !right_wall)
+    {
         return false;
-    } 
-    else return true;
+    }
+    else
+        return true;
 }
 
-//Update cells to the correspoding walls variable 
+// Update cells to the correspoding walls variable
 void Cell::update()
 {
     m->walls.rows[y].rowHorizontal[x] = top_wall;
-    m->walls.rows[y+ 1].rowHorizontal[x]= bottom_wall;
+    m->walls.rows[y + 1].rowHorizontal[x] = bottom_wall;
     m->walls.rows[y].rowVertical[x] = left_wall;
     m->walls.rows[y].rowVertical[x + 1] = right_wall;
 }
 
+// Initialise the walls variables
 void Maze::walls_init()
 {
     for (int i = 0; i < MAZE_SIZE; i++)
@@ -47,12 +51,12 @@ void Maze::walls_init()
         }
         walls.rows[i].rowVertical[MAZE_SIZE] = true;
     }
-    for (int i = 0; i < MAZE_SIZE; i++){
+    for (int i = 0; i < MAZE_SIZE; i++)
+    {
         walls.rowFinal[i] = true;
     }
-    
 }
-//Cell cells[MAZE_SIZE][MAZE_SIZE];
+// Cell cells[MAZE_SIZE][MAZE_SIZE];
 void Maze::maze_init()
 {
     for (int i = 0; i < MAZE_SIZE; i++)
@@ -60,16 +64,14 @@ void Maze::maze_init()
         for (int j = 0; j < MAZE_SIZE; j++)
         {
             cells[i][j].cell_init(i, j, this);
-            this->log << "Cell " << i << " " << j << " initialised " << cells[i][j].x << cells[i][j].y << std::endl;
+            this->log << "Cell Initialisation: " << i << " " << j << " initialised " << std::endl;
         }
     }
 }
 
-std::random_device randomNum; //Random Number Device Declaration
-int rdNum;
 void Maze::DFS(Cell &current)
 {
-    //Check if there is neighbour cells with all walls up
+    // Check if there is neighbour cells with all walls up
     if (Stack.empty())
     {
         return;
@@ -86,49 +88,49 @@ void Maze::DFS(Cell &current)
         (current.y != 0 ? this->cells[current.x][current.y - 1].isAllWallsUp() : false))
     {
 
-        this->log << "\n" << current.x << " " << current.y << " " << "pushed" << std::endl;
+        this->log << "DFS: Processing cell " << current.x << " " << current.y << "..." << std::endl;
         printf("\033c");
         std::cout << current.x << " " << current.y << " Stack length: " << Stack.size() << std::endl;
-        Maze::print(); //Print current plain
+        Maze::print(); // Print current plain
         usleep(TIME);
-        Cell * next;
-        
-        //Generate random numbers
-        //It will continue looping if the number of the corresponding neighbour cell does not have all walls up
-        do { 
+        Cell *next;
+
+        // Generate random numbers
+        // It will continue looping if the number of the corresponding neighbour cell does not have all walls up
+        do
+        {
             rdNum = randomNum() % 4;
-            this->log << "random code = " << rdNum << std::endl;
+            this->log << "Random code = " << rdNum << std::endl;
         } while (
             (!this->cells[current.x + 1][current.y].isAllWallsUp() && rdNum == 3) ||
             (!this->cells[current.x][current.y + 1].isAllWallsUp() && rdNum == 1) ||
             (!this->cells[current.x - 1][current.y].isAllWallsUp() && rdNum == 2) ||
             (!this->cells[current.x][current.y - 1].isAllWallsUp() && rdNum == 0) ||
 
-            //Handle boundary cases of movements 
+            // Handle boundary cases of movements
             ((current.x == 0) && (rdNum == 2)) ||
             ((current.x == MAZE_SIZE - 1) && (rdNum == 3)) ||
             ((current.y == 0) && (rdNum == 0)) ||
-            ((current.y == MAZE_SIZE - 1) && (rdNum == 1))
-        );
-        
+            ((current.y == MAZE_SIZE - 1) && (rdNum == 1)));
+
         switch (rdNum)
         {
-        case 0: //Move Up
+        case 0: // Move Up
             next = &cells[current.x][current.y - 1];
             current.top_wall = false;
             next->bottom_wall = false;
             break;
-        case 1: //Move Down
+        case 1: // Move Down
             next = &cells[current.x][current.y + 1];
             current.bottom_wall = false;
             next->top_wall = false;
             break;
-        case 2: //Move Left
+        case 2: // Move Left
             next = &cells[current.x - 1][current.y];
             current.left_wall = false;
             next->right_wall = false;
             break;
-        case 3: //Move Right
+        case 3: // Move Right
             next = &cells[current.x + 1][current.y];
             current.right_wall = false;
             next->left_wall = false;
@@ -137,18 +139,18 @@ void Maze::DFS(Cell &current)
             break;
         }
 
-        //Update cells to the walls variable 
+        // Update cells to the walls variable
         current.update();
         next->update();
         Stack.push(current);
-        this->log << "Stack " << Stack.top().x << " " << Stack.top().y << std::endl;
+        this->log << "Stack updated: " << Stack.top().x << " " << Stack.top().y << " pushed" << std::endl;
         DFS(*next);
     }
     else
     {
-        this->log << "Popping the top item on the stack..." << std::endl;
         Cell previous = Stack.top();
         Stack.pop();
+        this->log << "Stack updated: " << previous.x << " " << previous.y << " popped" << std::endl;
         DFS(previous);
     }
 }
@@ -163,15 +165,18 @@ void Maze::print()
             {
                 if (i % 2 == 0)
                 {
-                    if (this->walls.rows[int(j/2)].rowVertical[int(i/2)]){
+                    if (this->walls.rows[int(j / 2)].rowVertical[int(i / 2)])
+                    {
                         std::cout << WALL_CHAR;
-                    } else {
+                    }
+                    else
+                    {
                         std::cout << BLANK_CHAR;
                     }
                 }
                 else
                 {
-                    std::cout << BLANK_CHAR; //Cells
+                    std::cout << BLANK_CHAR; // Cells
                 }
             }
             std::cout << std::endl;
@@ -182,13 +187,16 @@ void Maze::print()
             {
                 if (i % 2 == 0)
                 {
-                    std::cout << WALL_CHAR; //Const blocks
+                    std::cout << WALL_CHAR; // Const blocks
                 }
                 else
                 {
-                    if (this->walls.rows[int(j/2)].rowHorizontal[int(i/2)]){
+                    if (this->walls.rows[int(j / 2)].rowHorizontal[int(i / 2)])
+                    {
                         std::cout << WALL_CHAR;
-                    } else {
+                    }
+                    else
+                    {
                         std::cout << BLANK_CHAR;
                     }
                 }
@@ -197,6 +205,8 @@ void Maze::print()
         }
     }
 }
+
+// Initial function to generate the maze
 void Maze::generate()
 {
     this->log << "Start generating maze..." << std::endl;
@@ -205,6 +215,8 @@ void Maze::generate()
     Stack.push(start);
     DFS(start);
 }
+
+// Maze generation function
 void Maze::init()
 {
     maze_init();
@@ -213,10 +225,9 @@ void Maze::init()
     this->log << "Maze generation completed." << std::endl;
 }
 
-
-
-
-void Maze::writeToPlain(){
+// Output generated maze to the two-dimensional vector for playing the maze
+void Maze::writeToPlain()
+{
     std::vector<bool> temp;
     for (int j = 0; j < MAZE_SIZE * 2 + 1; j++)
     {
@@ -227,15 +238,18 @@ void Maze::writeToPlain(){
             {
                 if (i % 2 == 0)
                 {
-                    if (this->walls.rows[int(j/2)].rowVertical[int(i/2)]){
+                    if (this->walls.rows[int(j / 2)].rowVertical[int(i / 2)])
+                    {
                         temp.push_back(false);
-                    } else {
+                    }
+                    else
+                    {
                         temp.push_back(true);
                     }
                 }
                 else
                 {
-                    temp.push_back(true); //Cells
+                    temp.push_back(true); // Cells
                 }
             }
             gamePlain.push_back(temp);
@@ -246,13 +260,16 @@ void Maze::writeToPlain(){
             {
                 if (i % 2 == 0)
                 {
-                    temp.push_back(false); //Const blocks
+                    temp.push_back(false); // Const blocks
                 }
                 else
                 {
-                    if (this->walls.rows[int(j/2)].rowHorizontal[int(i/2)]){
+                    if (this->walls.rows[int(j / 2)].rowHorizontal[int(i / 2)])
+                    {
                         temp.push_back(false);
-                    } else {
+                    }
+                    else
+                    {
                         temp.push_back(true);
                     }
                 }
@@ -262,74 +279,85 @@ void Maze::writeToPlain(){
     }
 }
 
-void Maze::printGamePlain(int x, int y){
-    for (int j = 0; j < gamePlain.size(); j++){
-        for (int i = 0; i < gamePlain[j].size(); i++){
-            if (x == i && y == j) std::cout << PLAYER_CHAR; 
-            else if (i == destination_x && j == destination_y) std::cout << DESTINATION_CHAR; 
-            else std::cout << (gamePlain[i][j] ? BLANK_CHAR : WALL_CHAR);
+// Prints the game plain each time while playing the maze
+void Maze::printGamePlain(int x, int y)
+{
+    for (int j = 0; j < gamePlain.size(); j++)
+    {
+        for (int i = 0; i < gamePlain[j].size(); i++)
+        {
+            if (x == i && y == j)
+                std::cout << PLAYER_CHAR;
+            else if (i == destination_x && j == destination_y)
+                std::cout << DESTINATION_CHAR;
+            else
+                std::cout << (gamePlain[j][i] ? BLANK_CHAR : WALL_CHAR);
         }
         std::cout << std::endl;
     }
     std::cout << "Press k to exit..." << std::endl;
 }
 
-void Maze::play(){
+// Overall function for playing the maze
+void Maze::play()
+{
     char input;
     int current_x = 1;
     int current_y = 1;
     writeToPlain();
-    while (!((current_x == destination_x) && (current_y == destination_y))){
+    while (!((current_x == destination_x) && (current_y == destination_y)))
+    {
         printGamePlain(current_x, current_y);
         system("stty raw");
         std::cin >> input;
         system("stty cooked");
-        switch(input){
-            case 'w':
-                if (gamePlain[current_x][current_y - 1]) current_y--;
-                break;
-            case 'a':
-                if (gamePlain[current_x - 1][current_y]) current_x--;
-                break;
-            case 's':
-                if (gamePlain[current_x][current_y + 1]) current_y++;
-                break;
-            case 'd':
-                if (gamePlain[current_x + 1][current_y]) current_x++;
-                break;
-            case 'k':
-                printf("\033c");
-                std::cout << "Game terminated by player" << std::endl;
-                return;
-                break;
-            default:
-                break;
+        switch (input)
+        {
+        case 'w':
+            if (gamePlain[current_y - 1][current_x])
+                current_y--;
+            break;
+        case 'a':
+            if (gamePlain[current_y][current_x - 1])
+                current_x--;
+            break;
+        case 's':
+            if (gamePlain[current_y + 1][current_x])
+                current_y++;
+            break;
+        case 'd':
+            if (gamePlain[current_y][current_x + 1])
+                current_x++;
+            break;
+        case 'k':
+            printf("\033c");
+            std::cout << "Game terminated by player" << std::endl;
+            return;
+            break;
+        default:
+            break;
         }
         printf("\033c");
     }
     std::cout << "You win!" << std::endl;
 }
 
+// Running the maze
 void Maze::run()
 {
+    this->log.open("../logs/maze_generation_logs.txt");
     init();
     this->log << "Initialisation completed." << std::endl;
     printf("\033c");
     play();
+    this->log.close();
 }
 
-
-//For testing only 
-int main()
+// For testing only
+/*int main()
 {
-    clock_t start, end;
     Maze *maze = new Maze;
-    maze->log.open("../logs/maze_logs.txt");
-    start = clock();
     maze->run();
     delete maze;
-    end = clock();
-    maze->log << "Time used: " << (end - start) << std::endl;
-    maze->log.close();
     return 0;
-}
+}*/

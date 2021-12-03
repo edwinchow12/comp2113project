@@ -1,0 +1,3 @@
+The user started playing Guess The Number
+The user finished playing Guess The Number
+The user started playing PeacefulWar

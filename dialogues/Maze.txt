@@ -1,0 +1,15 @@
+In front of you, it is the World of Mist.
+
+On this planet, the ground is always covered with mist. Even using the most advanced satellite, you cannot observe the activities of the indigenous people very clearly. You decide to land and discover the mysterious world. Once you have landed, you find that you are trapped in a maze. Unfortunately, the fuel runs out. The magnetic field causes your equipment to break down. You have to escape the maze to recover the signals.
+
+The following game is Maze. A maze will be generated, and you have to find a route, which leads you to the exit.
+
+Press 'S' to start the game...
+
+!
+
+Congratulations, you have found the exit. There is a treasure there, and you have got enough power dusts. Now, fasten your seatbelt, and head to another planet.
+
+Press c to continue...
+
+!

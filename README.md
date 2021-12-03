@@ -3,6 +3,15 @@ Groupmates:
 CHOW Yee Tak, Edwin
 POON Ho Ting, Rain 
 
+# How to play the game
+
+In the parent directory, type make main
+then, navigate to the bin folder with "cd ./bin" and run the game with ./main
+
+# System requirements
+
+The programme runs on only Linux-based systems. Please ensure that your terminal window is at least 80x24 while running the game. 
+
 # Project Description 
 This is a game with a storyline. The game will also include minigames such as maze, snake, peaceful war, etc.
 
@@ -64,33 +73,33 @@ Depth-First Search Algorithm: For generating the maze (External Libraries might 
 
 ### Data structures for storing game status
 
-Morra: int (the number of turns the game has progressed)
-
-Typing Fast: string (storing the words), int (the time limit)
+Guess The Number: int (the number)
 
 Peaceful War: Self-defined data type (storing the number of bases, defenses, attackers, etc)
 
-Guess The Number: int (the number)
-
-Snake: int (x and y-coordinates)
-
-Blackjack: array (the cards held by the players)
+Pacman: int (x and y-coordinates), struct (player coordinates and score), 2d array (the map)
 
 Maze: Two-dimensional arrays/(or with self-defined data type) (to store the maze), two int (store the position of the player)
 
-Struct: A self-defined data structure storing the gameplay data. 
+Struct: A self-defined data structure storing the gameplay data.
 For example, the player’s name, number of power dusts, current planet, etc. 
 
 ### Dynamic memory management
 
 Pointers: Passing arrays and values of power dusts. Pointers might be also used for some advanced data structures.
 
+We used Standard Template Libraries (STLs) such as stack and vectors, as well as declaring our game classes as pointer variables to manage the memory dynamically. 
+
 Array: add more elements to the array
 
 ### File input/output (e.g., for loading/saving game status)
 
+User data are stored in ./data/userdata.txt. Moreover, some logs are also output in ./logs/log.txt. Dialogues are stored in ./dialogues folder. 
+
 For saving game status, config files, etc.
 
 ### Program codes in multiple files
+
+Codes are stored in multiple files, each with a .cpp and .h file (except main.cpp). They are compiled with the makefile. 
 
 The code of each planet is stored in separate files. Once the player proceeds to the next stage, the main cpp file will call the corresponding function from another cpp file.

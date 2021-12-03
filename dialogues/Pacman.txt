@@ -1,0 +1,19 @@
+In front of you, it is the World of Bots.
+
+In this planet, it seems that the civilisation here has experienced some disasters. All the buildings are torn down, and there are just some bots wandering. You discover that the power dusts are scattered around the ground.
+
+Are you ready to play the game to collect the power dusts? (Y/ N)
+
+!
+
+The following game is Pacman. You have to get two scores without being caught by the bots.
+
+Press 'S' to start the game...
+
+!
+
+Congratulations, you have found the entrance, and get enough power dusts. Now, fasten your seatbelt, and head to another planet.
+
+Press 'c' to continue...
+
+!

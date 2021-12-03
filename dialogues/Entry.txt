@@ -1,0 +1,22 @@
+--Requirements--
+
+The game is tested to work in Mac OS X 11.5.2 and Linux. 
+Please use only Linux-based environment to run this game. 
+Please scale your Terminal window to at least 80*24 so that the game can run properly.
+
+---Disclaimer---
+
+The Stellians - Exploration (hereinafter referred as "the game") is developed for Group Project of COMP2113/ENGG1340 Course.
+This game was developed by CHOW Yee Tak, Edwin (3035801611) and POON Ho Ting, Rain (3035800904). 
+
+Press k to continue...
+
+!
+
+The Universe is nearly boundaryless to human. In the enormous Space, there are limitless possibilities.
+
+The Stellians are a high-level civillization which has acquired the power to manipulate the galaxy a century ago.
+
+Now, as a Stellian, you started your journey to explore the Universe.
+
+!

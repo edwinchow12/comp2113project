@@ -1,0 +1,27 @@
+“Mathematics is the language in which God has written the universe.” -- Galileo Galilei. 
+
+In front of you, it is the World of Mathematics. The indigenous people on this planet love mathematics very much, particularly probability theories. 
+
+They have exploited many power dusts by using probabilities to find the locations. They are willing to give you power dusts as a reward of playing games with them.
+
+Are you ready to play the games? (Y/ Y)
+
+!
+
+The first game is Guess The Number. A random number between 1 and 100 is assigned. After your guess, a narrower range will be given.
+
+Press 'S' to start the game...
+
+!
+
+The second game is Peaceful War. By playing paper scissor stone with another player, you get the opportunity to build walls and attackers. The attacker can attack the opponent and deduct his/ her hp while the wall can protect the player from the attack. Once the player's HP turns to zero, he/ she will lose the game.
+
+Press 'S' to start the game...
+
+!
+
+Congratulations, you have win all the games, and get enough power dusts. Now, fasten your seatbelt, and head to another planet.
+
+Press c to continue...
+
+!

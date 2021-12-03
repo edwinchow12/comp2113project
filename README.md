@@ -3,16 +3,19 @@ Groupmates:
 CHOW Yee Tak, Edwin (3035801611)
 POON Ho Ting, Rain (3035800904)
 
-# Education Purpose 
+## Education Purpose 
 
 We believe that Mathematics and Logic is vital for everyone. The program training the logical thinking of the players while playing the games. With games such as guess the number, which involves a lot of mathematics and probability theories inside. For pacman, the player has to move to minimise the possiblity to getting caught by the bots. For maze, the player has to formulate a path while playing. These all trains the logical mind of the players. The plots are also added to the game so as to make the game more interesting. 
 
 ## How to play the game
 
-git clone the game to your local directory and play
-In the parent directory, type "make main"
-if error prompts out, create a bin directory by "mkdir bin" and type "make main" again
-then, navigate to the bin folder with "cd ./bin" and run the game with ./main
+Clone the game to your local directory. 
+
+In the parent directory, type "make main". 
+
+If error prompts out, create a bin directory by "mkdir bin" and type "make main" again.
+
+Then, navigate to the bin folder with "cd bin" and run the game with "./main".
 
 ## System requirements
 
@@ -22,8 +25,8 @@ Please ensure that your terminal window is at least 80x24 while running the game
 ## Core dependencies 
 
 This programme is directed to be run on C++11. Please ensure that your Linux device has C++11 installed with a non-standard library unistd.h.
-Please also ensure that that the text files under ./dialogues are all available and non-altered.
-Also, ./bin should also be available. 
+Please also ensure that the text files under ./dialogues are all available and non-altered.
+Also, ./bin should also be present. 
 
 # Project Description 
 This is a game with a storyline. The game will also include minigames such as maze, pacman, peaceful war, etc.
@@ -64,6 +67,7 @@ In this planet, it seems that the civilisation here has experienced some disaste
 The player is required to get two scores without being caught by the bots.
 
 Press WASD to navigate though the plane. B refers to the bots and P refers to yourself, S refers to the scores you have to reach to get the marks. 
+
 You cannot touch the B with P and you have to eat all the S to win. 
 
 ### Third Planet -- The World of Mist (Maze)

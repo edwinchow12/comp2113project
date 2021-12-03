@@ -2,31 +2,11 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include "pacman.h"
 
 using namespace std;
 
-char a[15][30];
-
-struct Player
-{
-    int r;
-    int c;
-    int score = 0;
-};
-
-struct Bot
-{
-    int r;
-    int c;
-};
-
-struct Score
-{
-    int r;
-    int c;
-};
-
-void initpos(Bot &B)
+void Pacman::initpos(Bot &B)
 {
     B.r = rand() % 15;
     if (B.r == 1)
@@ -44,7 +24,7 @@ void initpos(Bot &B)
         B.c--;
 }
 
-void initspos(Score &S)
+void Pacman::initspos(Score &S)
 {
     S.r = rand() % 15;
     if (S.r == 1)
@@ -62,7 +42,7 @@ void initspos(Score &S)
         S.c--;
 }
 
-void randmove(Bot &B)
+void Pacman::randmove(Bot &B)
 {
     int c;
     c = rand() % 4;
@@ -84,7 +64,7 @@ void randmove(Bot &B)
         B.c--;
 }
 
-void initarray()
+void Pacman::initarray()
 {
     for (int i = 0; i < 15; i++)
     {
@@ -111,7 +91,7 @@ void initarray()
     }
 }
 
-void print(char a[15][30])
+void Pacman::print(char a[15][30])
 {
     for (int i = 0; i < 15; i++)
     {
@@ -123,7 +103,7 @@ void print(char a[15][30])
     }
 }
 
-void move(char input, Player &p)
+void Pacman::move(char input, Player &p)
 {
     switch (input)
     {
@@ -142,7 +122,7 @@ void move(char input, Player &p)
     }
 }
 
-int main()
+int Pacman::play()
 {
     srand(time(NULL));
     Bot B, B1, B2;
@@ -211,19 +191,20 @@ int main()
             break;
         if (p.r == B2.r && p.c == B2.c)
             break;
+        if (p.score==2) break;
         printf("\033c");
         print(a);
     }
     printf("\033c");
     print(a);
-    cout << p.score << endl;
     cout << "Type \'C\' to Continue..." << endl;
     system("stty raw");
     cin >> input;
     system("stty cooked");
-    system("clear");
+    printf("\033c");
     if (input == 'c')
-    {
+    {  
+        cout<<"You win the game!"<<endl;
         cout << "████████████████████████████████████████" << endl;
         cout << "████████████████████████████████████████" << endl;
         cout << "██████▀░░░░░░░░▀████████▀▀░░░░░░░▀██████" << endl;
@@ -245,5 +226,12 @@ int main()
         cout << "████████████████████████████████████████" << endl;
         cout << "████████████████████████████████████████" << endl;
     }
+    return 0;
+}
+
+int main(){
+    Pacman * pacman = new Pacman;
+    pacman->play();
+    delete pacman;
     return 0;
 }

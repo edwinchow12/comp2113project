@@ -8,6 +8,7 @@ using namespace std;
 
 //to initialize the position of the bot
 //the input is the data structure (Bot), B
+//the output is the change in the r and c of B
 void Pacman::initpos(Bot &B)
 {
     B.r = rand() % 15;
@@ -28,6 +29,7 @@ void Pacman::initpos(Bot &B)
 
 //to initialize the position of score
 //the input is the data structure (Score), S
+//the output is the change in r and c of S
 void Pacman::initspos(Score &S)
 {
     S.r = rand() % 15;
@@ -48,6 +50,7 @@ void Pacman::initspos(Score &S)
 
 //to move the position of the bot randomly
 //the input is the data structure (Bot), B
+//the output is the change in r and c of B
 void Pacman::randmove(Bot &B)
 {
     int c;
@@ -71,6 +74,7 @@ void Pacman::randmove(Bot &B)
 }
 
 //to initialize the array which is the map
+//the output is the initialized array
 void Pacman::initarray()
 {
     for (int i = 0; i < 15; i++)
@@ -100,6 +104,7 @@ void Pacman::initarray()
 
 //to print the array
 //the input is the array
+//the output is the array printed out
 void Pacman::print(char a[15][30])
 {
     for (int i = 0; i < 15; i++)
@@ -114,6 +119,7 @@ void Pacman::print(char a[15][30])
 
 //to move the position of the player according to the user's input
 //the input is the letter inputted by the user and the data structure (Player), p
+//the output is the change in r and c of p
 void Pacman::move(char input, Player &p)
 {
     switch (input)
@@ -136,6 +142,7 @@ void Pacman::move(char input, Player &p)
 //to play the game
 //if the player hit the walls or the bots, the game will be over
 //if the player's position overlaps with that of the score, the player will get one score
+//the output is the chaging map as the user inputs W, A, S, D
 int Pacman::play()
 {
     srand(time(NULL));

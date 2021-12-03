@@ -154,6 +154,7 @@ void Maze::DFS(Cell &current)
     }
 }
 
+// prints out the game plain of generation
 void Maze::print()
 {
     for (int j = 0; j < MAZE_SIZE * 2 + 1; j++)

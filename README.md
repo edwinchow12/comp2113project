@@ -3,6 +3,10 @@ Groupmates:
 CHOW Yee Tak, Edwin (3035801611)
 POON Ho Ting, Rain (3035800904)
 
+# Education Purpose 
+
+We believe that Mathematics and Logic is vital for everyone. The program training the logical thinking of the players while playing the games. With games such as guess the number, which involves a lot of mathematics and probability theories inside. For pacman, the player has to move to minimise the possiblity to getting caught by the bots. For maze, the player has to formulate a path while playing. These all trains the logical mind of the players. The plots are also added to the game so as to make the game more interesting. 
+
 ## How to play the game
 
 git clone the game to your local directory and play
@@ -43,9 +47,13 @@ Maze
 
 The player is required to guess a number between 1 and 100. The bound will be lowered or increased to the value the user inputs, if the user fails to get the correct number. The player wins if the player guesses the correct number. The fewer times the user uses to get the correct number, the more power dusts the player gets in that game. 
 
+Type the number and press enter to play the game. 
+
 #### Game -- Peaceful War 
 
 The player is required to play against the computer player. During the game, the player will first have one defence wall and 4 bases (A, B, C, D). The player will play Rock Paper Scissors with the computer. The winner can choose to build a defence wall or an attacker. If the winner has an attacker, the winner can choose to attack the opponent. The player who destroys all the 4 bases of the enemy wins.
+
+Type your choice and press enter each time. If you don't see you win state for you to choose to build a defence wall or add an attacker, that means you lose that round. 
 
 ### Second Planet -- The World of Bots
 
@@ -55,13 +63,21 @@ In this planet, it seems that the civilisation here has experienced some disaste
 
 The player is required to get two scores without being caught by the bots.
 
+Press WASD to navigate though the plane. B refers to the bots and P refers to yourself, S refers to the scores you have to reach to get the marks. 
+You cannot touch the B with P and you have to eat all the S to win. 
+
 ### Third Planet -- The World of Mist (Maze)
 
 On this planet, the ground is always covered with mist. Even using the most advanced satellite, the Stellians cannot observe the activities of the indigenous people very clearly. Some stellians decide to land and discover the mysterious world. Once they have landed, they find that they are trapped in a maze. Unfortunately, the fuel runs out. The magnetic field causes their equipment to break down. They have to escape the maze to recover the signals.
 
 #### Game -- Maze
 
-The player is required to finish the maze to get the power dusts. 
+The player is required to finish the maze to get the power dusts.
+
+The player can move with WASD. P refers to the player and D refers to the destination.
+The player has to reach the destination. 
+
+Interesting feature: the maze generation is printed while generation. The time between each iteration can also be increased to make the generation process more viewable. The size of the maze can also be changed. All the mentioned changes can be changed in maze.h. 
 
 ## Code Requirements
 

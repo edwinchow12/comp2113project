@@ -254,4 +254,5 @@ int PeacefulWar::run()
         cout << "You lose!" << endl;
         return 1;
     }
+    return 0;
 }

@@ -11,7 +11,7 @@ class Cell;
 class Maze;
 
 #define MAZE_SIZE 10
-#define TIME 10000
+#define TIME 50000
 #define WALL_CHAR "●"
 #define BLANK_CHAR " "
 #define PLAYER_CHAR "P"

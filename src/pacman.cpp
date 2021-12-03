@@ -169,6 +169,8 @@ int Pacman::play()
             p.score++;
             tof = 1;
             s1.r = s1.c = 0;
+        } else {
+            a[s1.r][s1.c] = 'S';
         }
         if (p.r == s2.r && p.c == s2.c)
         {
@@ -176,6 +178,8 @@ int Pacman::play()
             p.score++;
             tof = 2;
             s2.r = s2.c = 0;
+        } else {
+            a[s2.r][s2.c] = 'S';
         }
         randmove(B);
         randmove(B1);

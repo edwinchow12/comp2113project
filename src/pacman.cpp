@@ -201,13 +201,13 @@ int Pacman::play()
         a[B1.r][B1.c] = 'B';
         a[B2.r][B2.c] = 'B';
         if (p.r == 0 || p.c == 0 || p.c == 29 || p.r == 14)
-            break;
+            return 1;
         if (p.r == B.r && p.c == B.c)
-            break;
+            return 1;
         if (p.r == B1.r && p.c == B1.c)
-            break;
+            return 1;
         if (p.r == B2.r && p.c == B2.c)
-            break;
+            return 1;
         if (p.score==2) break;
         printf("\033c");
         print(a);

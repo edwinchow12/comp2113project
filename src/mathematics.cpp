@@ -9,7 +9,7 @@
 using namespace std;
 
 // Guess The Number
-
+// The number of times the user used to guess the number is returned
 int GuessTheNumber::run()
 {
     int numGuess, numSecret, numUp, numDown, numMid, count;
@@ -19,6 +19,7 @@ int GuessTheNumber::run()
     numGuess = -1;
     std::mt19937 randomNum(time(NULL));
     numSecret = randomNum() % 100 + 1;
+    printf("\033c");
     while (numGuess != numSecret)
     {
         cout << "Enter the number " << numDown << " to " << numUp << endl;

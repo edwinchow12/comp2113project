@@ -79,6 +79,8 @@ int main()
     FileObj.close();
 
     //----------------------------------------------------
+
+    //The games will be separated with ---- like the above one
     if (player.planet == "Mathematics")
     {
         int numTimesUsed;
@@ -88,9 +90,9 @@ int main()
         waitForInput(FileObj, 's', true);
         try
         {
-            log << "The user started playing Guess The Number" << endl;
-            GuessTheNumber *guessTheNumber = new GuessTheNumber;
-            numTimesUsed = guessTheNumber->run();
+            log << "The user started playing Guess The Number" << endl; //Write to logs
+            GuessTheNumber *guessTheNumber = new GuessTheNumber; // Declaration of pointer game object
+            numTimesUsed = guessTheNumber->run(); // The time used for the player to guess the number is returned
             delete guessTheNumber;
             log << "The user finished playing Guess The Number" << endl;
         }
@@ -98,11 +100,14 @@ int main()
         {
             log << "Error occurred while playing Guess The Number";
         }
+
+        //Calculate the number of power dusts
         if (numTimesUsed < 5) player.numPowerDusts += 100; 
         else if (numTimesUsed < 10) player.numPowerDusts += 50;
         cout << "You have " << player.numPowerDusts << " power dusts now." << endl;
         waitForInput(FileObj, 's', true);
 
+        SaveProcess(&player);
         int isWin;
         try
         {
@@ -140,6 +145,7 @@ int main()
     if (player.planet == "Pacman")
     {
         int isWin; // 1 = lose and 0 = win
+        printf("\n");
         FileObj.open("../dialogues/Pacman.txt");
         waitForInput(FileObj, 'y', true);
         waitForInput(FileObj, 's', true);
@@ -147,11 +153,11 @@ int main()
         {
             printf("\033c");
             log << "The user started playing Pacman" << endl;
-            start = chrono::system_clock::now();
+            start = chrono::system_clock::now(); // record them time when the player starts playing
             Pacman *pacman = new Pacman;
-            isWin = pacman->play();
+            isWin = pacman->play(); // 1 is returned for losing cases, 0 is returned for winning cases
             delete pacman;
-            end = chrono::system_clock::now();
+            end = chrono::system_clock::now(); // record the time when the player ends playing
             log << "The user finished playing Pacman" << endl;
         }
         catch (exception)
@@ -159,7 +165,7 @@ int main()
             log << "Error occurred while playing Pacman";
         }
 
-        int sec = chrono::duration_cast<chrono::seconds>(end - start).count();
+        int sec = chrono::duration_cast<chrono::seconds>(end - start).count(); // Calculate the time the player needed to play the game
         if (isWin == 0){
             if (0 <= sec && sec <= 30)
                 player.numPowerDusts += 100;
@@ -178,16 +184,17 @@ int main()
     //----------------------------------------------------
     if (player.planet == "Maze")
     {
+        printf("\n");
         FileObj.open("../dialogues/Maze.txt");
         waitForInput(FileObj, 's', true);
         try
         {
             log << "The user started playing Maze" << endl;
-            start = chrono::system_clock::now();
+            start = chrono::system_clock::now(); // record them time when the player starts playing
             Maze *maze = new Maze;
             maze->run();
             delete maze;
-            end = chrono::system_clock::now();
+            end = chrono::system_clock::now(); // record them time when the player ends playing
         }
         catch (exception)
         {
@@ -196,8 +203,9 @@ int main()
         log << "The user finshed playing Maze" << endl;
         log << "Game ended." << endl;
 
-        int sec = chrono::duration_cast<chrono::seconds>(end - start).count();
+        int sec = chrono::duration_cast<chrono::seconds>(end - start).count(); // Calculate the time played used to finish the maze
 
+        //Calculate the number of power dusts from the time played
         if (0 <= sec && sec <= 30)
             player.numPowerDusts += 100;
         else if (30 <= sec && sec <= 60)
@@ -210,6 +218,7 @@ int main()
         FileObj.close();
         player.planet = "Finished";
         SaveProcess(&player);
+        printf("\n");
         FileObj.open("../dialogues/Ending.txt");
         waitForInput(FileObj, ' ', false);
         FileObj.close();

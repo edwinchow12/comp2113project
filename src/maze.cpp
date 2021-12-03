@@ -90,7 +90,6 @@ void Maze::DFS(Cell &current)
 
         this->log << "DFS: Processing cell " << current.x << " " << current.y << "..." << std::endl;
         printf("\033c");
-        std::cout << current.x << " " << current.y << " Stack length: " << Stack.size() << std::endl;
         Maze::print(); // Print current plain
         usleep(TIME);
         Cell *next;

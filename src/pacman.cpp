@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//to initialize the position of the
 void Pacman::initpos(Bot &B)
 {
     B.r = rand() % 15;
@@ -24,6 +25,7 @@ void Pacman::initpos(Bot &B)
         B.c--;
 }
 
+//to initialize the position of score
 void Pacman::initspos(Score &S)
 {
     S.r = rand() % 15;
@@ -42,6 +44,7 @@ void Pacman::initspos(Score &S)
         S.c--;
 }
 
+//to move the position of the bot randomly
 void Pacman::randmove(Bot &B)
 {
     int c;
@@ -64,6 +67,7 @@ void Pacman::randmove(Bot &B)
         B.c--;
 }
 
+//to initialize the array which is the map
 void Pacman::initarray()
 {
     for (int i = 0; i < 15; i++)
@@ -91,6 +95,7 @@ void Pacman::initarray()
     }
 }
 
+//to print the array
 void Pacman::print(char a[15][30])
 {
     for (int i = 0; i < 15; i++)
@@ -103,6 +108,7 @@ void Pacman::print(char a[15][30])
     }
 }
 
+//to move the position of the player according to the user's input
 void Pacman::move(char input, Player &p)
 {
     switch (input)
@@ -122,6 +128,9 @@ void Pacman::move(char input, Player &p)
     }
 }
 
+//to play the game
+//if the player hit the walls or the bots, the game will be over
+//if the player's position overlaps with that of the score, the player will get one score
 int Pacman::play()
 {
     srand(time(NULL));

@@ -4,7 +4,7 @@ On this planet, the ground is always covered with mist. Even using the most adva
 
 The following game is Maze. A maze will be generated, and you have to find a route, which leads you to the exit.
 
-Press 'S' to start the game...
+Press s to start the game...
 
 !
 

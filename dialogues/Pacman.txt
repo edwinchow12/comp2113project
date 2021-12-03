@@ -8,12 +8,12 @@ Are you ready to play the game to collect the power dusts? (Y/ N)
 
 The following game is Pacman. You have to get two scores without being caught by the bots.
 
-Press 'S' to start the game...
+Press s to start the game...
 
 !
 
 Congratulations, you have found the entrance, and get enough power dusts. Now, fasten your seatbelt, and head to another planet.
 
-Press 'c' to continue...
+Press c to continue...
 
 !

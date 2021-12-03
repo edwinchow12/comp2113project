@@ -11,11 +11,11 @@ We believe that Mathematics and Logic is vital for everyone. The program trainin
 
 Clone the game to your local directory. 
 
-In the parent directory, type "make main". 
+In the project directory, compile the program with makefile by typing "make main". 
 
-If error prompts out, create a bin directory by "mkdir bin" and type "make main" again.
+If error prompts out, create a subdirectory named "bin" by typing "mkdir bin" and type "make main" again.
 
-Then, navigate to the bin folder with "cd bin" and run the game with "./main".
+Then, navigate to the subdirectory "bin" with "cd bin" and run the game with "./main".
 
 ## System requirements
 

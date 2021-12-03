@@ -103,3 +103,7 @@ For saving game status, config files, etc.
 Codes are stored in multiple files, each with a .cpp and .h file (except main.cpp). They are compiled with the makefile. 
 
 The code of each planet is stored in separate files. Once the player proceeds to the next stage, the main cpp file will call the corresponding function from another cpp file.
+
+### Non-standard library used
+
+unistd.h
